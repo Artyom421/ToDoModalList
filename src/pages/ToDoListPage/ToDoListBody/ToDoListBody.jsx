@@ -15,8 +15,8 @@ export const ToDoListBody = () => {
     }
 
     const del = (index) => {
-        const newList = list.splice( index+1 )
-        dispatch(deleteItem(newList))
+        list.splice( index, 1)
+        dispatch(deleteItem(list))
     }
 
     return (
