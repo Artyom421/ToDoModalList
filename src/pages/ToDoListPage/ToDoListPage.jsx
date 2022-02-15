@@ -2,6 +2,7 @@ import { useHistory } from "react-router"
 import { ToDoListHeader } from "./ToDoListHeader"
 import { ToDoListBody } from "./ToDoListBody"
 import { ToDoListFooter } from "./ToDoListFooter"
+import { ToDoListModal } from "./ToDoListModal"
 
 
 export const ToDoListPage = () => {
@@ -21,6 +22,7 @@ export const ToDoListPage = () => {
                 <ToDoListHeader/>
                 <ToDoListBody/>
                 <ToDoListFooter/>
+                <ToDoListModal/>
             </div>
         </>
 

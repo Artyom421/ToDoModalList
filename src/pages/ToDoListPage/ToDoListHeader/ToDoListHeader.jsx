@@ -1,6 +1,7 @@
 import { useDispatch } from "react-redux"
 import { useSelector } from "react-redux"
 import { changeText, addText } from "../../../store/actions"
+import { Styled } from "./ToDoListHeader.styled"
 
 export const ToDoListHeader = () => {
 
@@ -17,14 +18,17 @@ export const ToDoListHeader = () => {
     }
 
     return (
-        <div>
-            <form onSubmit={(e) => {
-                e.preventDefault();
-                add();
-            }}>
-                <input type="text" value={text} onChange={(e) => changeValue(e.target.value)}/>
-                <button>ADD</button>
-            </form>
-        </div>
+        <Styled.Root>
+            <div>
+                <form onSubmit={(e) => {
+                    e.preventDefault();
+                    add();
+                }}>
+                    <input type="text" value={text} onChange={(e) => changeValue(e.target.value)}/>
+                    <button>ADD</button>
+                </form>
+            </div>
+            
+        </Styled.Root>
     )
 }
