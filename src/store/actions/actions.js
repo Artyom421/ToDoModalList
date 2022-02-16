@@ -14,8 +14,8 @@ export const changeText = ( payload ) => {
     return { type: CHANGE_TEXT, payload }
 }
 
-export const addText = () => {
-    return { type: ADD_TEXT}
+export const addText = ( payload ) => {
+    return { type: ADD_TEXT, payload}
 }
 
 export const changeChacked = ( payload ) => {

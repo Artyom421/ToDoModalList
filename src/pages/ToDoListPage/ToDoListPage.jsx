@@ -14,18 +14,18 @@ export const ToDoListPage = () => {
     }
 
     return (
-        <>
-            <div>
-                <h1>This is ToDoListPage</h1>
-                <h2 onClick={() => goToHomePage('/')} style={{cursor:"pointer"}}>GO TO HomePage</h2>
-            </div>
-                <Styled.Root>
+        <Styled.Root>
+            <Styled.Div>
+                <Styled.Ptag>This is ToDoListPage</Styled.Ptag>
+                <Styled.Ptag onClick={() => goToHomePage('/')} style={{cursor:"pointer"}}>GO TO HomePage</Styled.Ptag>
+            </Styled.Div>
+                <Styled.ToDo>
                     <ToDoListHeader/>
                     <ToDoListBody/>
                     <ToDoListFooter/>
                     <ToDoListModal/>
-                </Styled.Root>
-        </>
+                </Styled.ToDo>
+        </Styled.Root>
         
 
     )

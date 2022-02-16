@@ -1,15 +1,47 @@
 import styled from "styled-components";
 
 const Root = styled.div`
-    padding: 15px 25px;
-    background-color:blue;
+    background-color: white;
     display:flex;
     justify-content: center; 
+    width: 100%;
+    padding: 10px 0;
+    border-radius: 10px;
+    box-shadow: 2px 4px 4px silver;
 
 `
 
-const First = styled.div `
-    width:50%;
+const Form = styled.form `
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 `
 
-export const Styled = { Root, First }
+const Input = styled.input`
+    outline: none;
+    border: none;
+    padding: 10px;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    color: #282828;
+    width: 70%;
+`
+
+const Button = styled.button`
+    border: none;
+    background-color: blue;
+    border-radius: 5px;
+    color: bisque;
+    font-size: 18px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 600;
+    width: 20%;
+    height: 100%;
+    cursor: pointer;
+    box-shadow: 1px 2px 2px grey;
+`
+
+export const Styled = { Root, Form, Input, Button }

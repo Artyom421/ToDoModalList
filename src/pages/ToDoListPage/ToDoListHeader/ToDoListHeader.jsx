@@ -7,27 +7,35 @@ export const ToDoListHeader = () => {
 
     const dispatch = useDispatch();
     const state = useSelector( (state) => state);
-    const { text } = state;
+    const { text, list } = state;
 
     const changeValue = (value) => {
         dispatch(changeText(value))
     }
 
     const add = () => {
-        dispatch(addText())
+
+        const alertText = `The input field is empty
+Pleace enter the text `
+
+        if(text === ''){
+            alert(alertText)
+            return { ...state};
+        }else{
+            list.push( { text, isCompleted: false, id: Math.random(),  } )
+        dispatch(addText(list))
+        }
     }
 
     return (
-        <div>
-            <div>
-                <form onSubmit={(e) => {
-                    e.preventDefault();
-                    add();
-                }}>
-                    <input type="text" placeholder="text" value={text} onChange={(e) => changeValue(e.target.value)}/>
-                    <button>ADD</button>
-                </form>
-            </div>
-        </div>
+        <Styled.Root>
+            <Styled.Form onSubmit={(e) => {
+                e.preventDefault();
+                add();
+            }}>
+                <Styled.Input type="text" placeholder="Enter text" value={text} onChange={(e) => changeValue(e.target.value)}/>
+                <Styled.Button>ADD</Styled.Button>
+            </Styled.Form>
+        </Styled.Root>
     )
 }

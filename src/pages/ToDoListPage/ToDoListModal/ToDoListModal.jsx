@@ -3,6 +3,7 @@ import Modal from 'react-modal';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { closeModal, deleteItem, changeNewText, addNewText } from "../../../store/actions"
+import { Styled } from './ToDoListModal.styled';
 
 const customStyles = {
   content: {
@@ -15,7 +16,7 @@ const customStyles = {
   },
 };
 
-export function ToDoListModal() {
+export const ToDoListModal = () => {
 
     const dispatch = useDispatch()
     const state = useSelector(( state ) => state)
@@ -49,17 +50,20 @@ export function ToDoListModal() {
         isOpen={isModalOpen}
         style={customStyles}
       >
-      <div>
-        <button onClick={() => cancel()}>X</button>
-        <h3>do you Want to {modalContent.text} this item</h3>
-      </div>
-        {
-          modalContent.text === "delete" ? <span>{modalText}</span> : 
-          <textarea id="" cols="30" rows="10" onChange={(e) => change(e.target.value)}>{modalText}</textarea>
-        }
-          <button onClick={() => removeItem(modalContent.index, modalContent.text)}>{modalContent.button}</button>
-      <button onClick={() => cancel() }>CANCEL</button>
-
+        <Styled.Root>
+          <Styled.Div>
+            <Styled.Hedear>Do you want to {modalContent.text} this item ?</Styled.Hedear>
+            <Styled.Button onClick={() => cancel()}>X</Styled.Button>
+          </Styled.Div>
+            {
+              modalContent.text === "delete" ? <Styled.Span>{modalText}</Styled.Span> : 
+              <Styled.TextArea id="" cols="20" rows="1" onChange={(e) => change(e.target.value)}>{modalText}</Styled.TextArea>
+            }
+          <Styled.Div>
+            <Styled.Button2 onClick={() => removeItem(modalContent.index, modalContent.text)}>{modalContent.button}</Styled.Button2>
+            <Styled.Button onClick={() => cancel() }>CANCEL</Styled.Button>
+          </Styled.Div>
+        </Styled.Root>
       </Modal>
     </div>
   );

@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from "react-redux"
 import { changeChacked, isOpenModal, modalEdit, modalDel } from "../../../store/actions"
+import { Styled } from "./ToDoListBody.styled"
 
 export const ToDoListBody = () => {
 
@@ -39,20 +40,21 @@ export const ToDoListBody = () => {
 
 
     return (
-        <div>
+        <Styled.Root>
             {
                 list.map(( item , index )=> (
-                    <div key={item.id}>
-                        <label >
-                            {index + 1}
-                            <input type="checkbox" onClick={(e) => changeInputChecked(e.target.checked, index) }/>
-                            {item.text}
-                            <button onClick={() => openModalDel(item.text, index) }>del</button>
-                            <button onClick={() => openModalEdit(item.text, index) }>edit</button>
-                        </label>
-                    </div>
+                    
+                    <Styled.Label key={item.id}>
+                        <Styled.Span>{index + 1}</Styled.Span>
+                        <Styled.Input type="checkbox" onClick={(e) => changeInputChecked(e.target.checked, index) }/>
+                        <Styled.Ptag>{item.text}</Styled.Ptag>
+                        <Styled.Div>
+                            <Styled.ButtonDel onClick={() => openModalDel(item.text, index) }>del</Styled.ButtonDel>
+                            <Styled.ButtonEdit onClick={() => openModalEdit(item.text, index) }>edit</Styled.ButtonEdit>
+                        </Styled.Div>
+                    </Styled.Label>
                 ))
             }
-        </div>
+        </Styled.Root>
     )
 }

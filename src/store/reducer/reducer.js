@@ -22,22 +22,14 @@ const toDoState = {
 
 export const Reducer = ( state = toDoState, action ) => {
 
-    const stateClone = JSON.parse(JSON.stringify(state))
-    const { list, text, isModalOpen, modalText, modal, newText } = stateClone
 
     switch( action.type ){
         case CHANGE_TEXT: 
             return{ ...state, text: action.payload };
         case ADD_TEXT:
-            if(text === ''){
-                alert("Մուտքային դաշտը դատարկ Է")
-                return { ...state};
-            }else{
-                list.push( { text, isCompleted: false, id: Math.random(),  } )
-                return{ ...state, list, text: ""}
-            }
+            return{ ...state, list: action.payload, text: ""}
         case CHANGE_CHECKED:
-            return { ... state, list: action.payload }
+            return { ...state, list: action.payload }
         case CLEAR_COMPLETED:
             return { ...state, list: action.payload }
         case DELETE_ITEM:
