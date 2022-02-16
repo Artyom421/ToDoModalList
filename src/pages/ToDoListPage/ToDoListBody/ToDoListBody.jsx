@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux"
-import { changeChacked, isOpenModal, modalEdit,modalDel } from "../../../store/actions"
+import { changeChacked, isOpenModal, modalEdit, modalDel } from "../../../store/actions"
 
 export const ToDoListBody = () => {
 
@@ -9,7 +9,7 @@ export const ToDoListBody = () => {
 
     const dispatch = useDispatch()
     const state = useSelector(( state ) => state)
-    const { list, modal } = state
+    const { list } = state
 
     const changeInputChecked = ( value, index ) => {
         const item = list[index]

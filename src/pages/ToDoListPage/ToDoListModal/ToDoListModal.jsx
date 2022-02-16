@@ -15,21 +15,20 @@ const customStyles = {
   },
 };
 
-
 export function ToDoListModal() {
 
     const dispatch = useDispatch()
     const state = useSelector(( state ) => state)
-    const { isModalOpen, modalText, modal, list } = state
+    const { isModalOpen, modalText, modalContent, list, newModalText } = state
 
     const cancel = () => {
         dispatch(closeModal())
     }
 
-    const change = (text) => {
-      dispatch(changeNewText(text))
+    const change = (newText) => {
+      dispatch(changeNewText(newText))
     }
-
+    
     const removeItem = (index, text) => {
       if(text === "delete"){
         list.splice(index,1)
@@ -38,13 +37,11 @@ export function ToDoListModal() {
       }
       else if(text === "edit"){
         const item = list[index]
-        item.text = text
+        item.text = newModalText
         dispatch(addNewText(list))
         cancel()
       }
     }
-
-
 
   return (
     <div>
@@ -54,15 +51,15 @@ export function ToDoListModal() {
       >
       <div>
         <button onClick={() => cancel()}>X</button>
-        <h3>do you Want to {modal.text} this item</h3>
+        <h3>do you Want to {modalContent.text} this item</h3>
       </div>
-      {
-        modal.text === "delete" ? <span>modalText</span> : <input type="text" value={modalText} onChange={(e) => change(e.target.value)}/>
-      }
-       <div>
-        <button onClick={() => removeItem(modal.index, modal.text)}>{modal.button}</button>
-        <button onClick={() => cancel() }>CANCEL</button>
-       </div>
+        {
+          modalContent.text === "delete" ? <span>{modalText}</span> : 
+          <textarea id="" cols="30" rows="10" onChange={(e) => change(e.target.value)}>{modalText}</textarea>
+        }
+          <button onClick={() => removeItem(modalContent.index, modalContent.text)}>{modalContent.button}</button>
+      <button onClick={() => cancel() }>CANCEL</button>
+
       </Modal>
     </div>
   );

@@ -18,17 +18,16 @@ export const ToDoListHeader = () => {
     }
 
     return (
-        <Styled.Root>
+        <div>
             <div>
                 <form onSubmit={(e) => {
                     e.preventDefault();
                     add();
                 }}>
-                    <input type="text" value={text} onChange={(e) => changeValue(e.target.value)}/>
+                    <input type="text" placeholder="text" value={text} onChange={(e) => changeValue(e.target.value)}/>
                     <button>ADD</button>
                 </form>
             </div>
-            
-        </Styled.Root>
+        </div>
     )
 }

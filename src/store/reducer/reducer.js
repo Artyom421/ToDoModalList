@@ -15,8 +15,9 @@ const toDoState = {
     text: "",
     isModalOpen: false ,
     modalText: "",
-    modal: {},
-    newText: ""
+    modalContent: {},
+    newText: "",
+    newModalText: ""
 }
 
 export const Reducer = ( state = toDoState, action ) => {
@@ -44,13 +45,13 @@ export const Reducer = ( state = toDoState, action ) => {
         case IS_OPEN_MODAL:
             return { ...state, isModalOpen: true , modalText: action.payload}
         case MODAL_DEL:
-            return { ...state, modal: action.payload}
+            return { ...state, modalContent: action.payload}
         case MODAL_EDIT:
-            return { ...state, modal: action.payload}
+            return { ...state, modalContent: action.payload}
         case CLOSE_MODAL:
             return { ...state, isModalOpen: false}
         case CHANGE_NEW_TEXT:
-            return { ...state, newText: action.payload}
+            return { ...state, newModalText: action.payload}
         case ADD_NEW_TEXT:
             return { ...state, list: action.payload}    
         default: 
