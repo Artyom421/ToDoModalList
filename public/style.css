@@ -1,0 +1,15 @@
+.add:hover {
+    background-color: whitesmoke;
+    color: #282828;
+}
+
+.changeStyle>p {
+    text-decoration: line-through;
+    font-size: 22px;
+    font-weight: 800;
+    color: rgb(228, 35, 35);
+    letter-spacing: 2px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+

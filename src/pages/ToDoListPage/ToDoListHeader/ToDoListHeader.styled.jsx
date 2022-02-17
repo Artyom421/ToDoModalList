@@ -32,7 +32,7 @@ const Input = styled.input`
 
 const Button = styled.button`
     border: none;
-    background-color: blue;
+    background-color: #282828;
     border-radius: 5px;
     color: bisque;
     font-size: 18px;
@@ -42,6 +42,7 @@ const Button = styled.button`
     height: 100%;
     cursor: pointer;
     box-shadow: 1px 2px 2px grey;
+    transition: 1s;
 `
 
 export const Styled = { Root, Form, Input, Button }

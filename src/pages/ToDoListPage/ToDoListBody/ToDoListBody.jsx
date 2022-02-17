@@ -4,10 +4,6 @@ import { Styled } from "./ToDoListBody.styled"
 
 export const ToDoListBody = () => {
 
-    
-
-    
-
     const dispatch = useDispatch()
     const state = useSelector(( state ) => state)
     const { list } = state
@@ -38,15 +34,22 @@ export const ToDoListBody = () => {
         dispatch(modalDel(modalDelContent))
     }
 
+    const changeStyle = (id) => {
+        const item = document.getElementById(id)
+        item.classList.toggle('changeStyle')
+    }
+
+    
 
     return (
         <Styled.Root>
             {
                 list.map(( item , index )=> (
                     
-                    <Styled.Label key={item.id}>
+                    <Styled.Label id={item.id} key={item.id}>
                         <Styled.Span>{index + 1}</Styled.Span>
-                        <Styled.Input type="checkbox" onClick={(e) => changeInputChecked(e.target.checked, index) }/>
+                        <Styled.Input type="checkbox" onClick={(e) => {changeInputChecked(e.target.checked, index) 
+                                                                        changeStyle(item.id)}}/>
                         <Styled.Ptag>{item.text}</Styled.Ptag>
                         <Styled.Div>
                             <Styled.ButtonDel onClick={() => openModalDel(item.text, index) }>del</Styled.ButtonDel>

@@ -6,7 +6,7 @@ import { Styled } from "./ToDoListHeader.styled"
 export const ToDoListHeader = () => {
 
     const dispatch = useDispatch();
-    const state = useSelector( (state) => state);
+    const state = useSelector(( state ) => state);
     const { text, list } = state;
 
     const changeValue = (value) => {
@@ -34,7 +34,7 @@ Pleace enter the text `
                 add();
             }}>
                 <Styled.Input type="text" placeholder="Enter text" value={text} onChange={(e) => changeValue(e.target.value)}/>
-                <Styled.Button>ADD</Styled.Button>
+                <Styled.Button className="add">ADD</Styled.Button>
             </Styled.Form>
         </Styled.Root>
     )

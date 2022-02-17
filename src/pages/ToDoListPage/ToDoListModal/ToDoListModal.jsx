@@ -53,7 +53,7 @@ export const ToDoListModal = () => {
         <Styled.Root>
           <Styled.Div>
             <Styled.Hedear>Do you want to {modalContent.text} this item ?</Styled.Hedear>
-            <Styled.Button onClick={() => cancel()}>X</Styled.Button>
+            <Styled.Button className='close' onClick={() => cancel()}>X</Styled.Button>
           </Styled.Div>
             {
               modalContent.text === "delete" ? <Styled.Span>{modalText}</Styled.Span> : 

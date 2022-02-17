@@ -5,11 +5,14 @@ const Root = styled.div`
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    justify-content: center;
+    max-height: 200px;
+    overflow: scroll;
+    overflow-x: hidden;
 `
 
 const Label = styled.label`
     width: 100%;
+    height: 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -18,31 +21,36 @@ const Label = styled.label`
     cursor: pointer;
 `
 const Span = styled.span`
-    width: 30px;
-    height: 30px;
     display: flex;
-    justify-content: center;
     align-items: center;
-    border-radius: 50%;
-    background-color: green;
-    color: white;
+    justify-content: center;
+    width: 25px;
+    height: 25px;
+    border-right: 1px solid #282828;
+    border-left: 1px solid #282828;
+    font-size: 22px;
+    color: #282828;
     font-weight: 600;
 `
 
 const Input = styled.input`
     width: 25px;
     height: 25px;
-
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    
 `
 
 const Ptag = styled.p`
     width: 61%;
-    font-size: 18px;
+    font-size: 22px;
     font-family: Arial, Helvetica, sans-serif;
-    font-weight: 500;
+    font-weight: 700;
+    font-weight: 700;
     color: #282828;
+    letter-spacing: 2px;
 `
-
 const Div = styled.div`
     display: flex;
     justify-content: center;

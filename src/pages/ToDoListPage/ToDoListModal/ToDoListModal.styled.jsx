@@ -5,7 +5,7 @@ const Root = styled.div`
     flex-direction: column;
     align-items: center;
     row-gap: 20px;
-    width: 350px;
+    width: 400px;
 `
 
 const Div = styled.div`
@@ -53,6 +53,7 @@ const Button2 = styled.button`
     border-radius: 10px;
     box-shadow: 1px 2px 2px ;
     cursor: pointer;
+}
 `
 
 const TextArea = styled.textarea`
