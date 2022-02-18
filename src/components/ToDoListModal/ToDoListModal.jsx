@@ -2,7 +2,7 @@ import React from 'react';
 import Modal from 'react-modal';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
-import { closeModal, deleteItem, changeNewText, addNewText } from "../../../store/actions"
+import { closeModal, deleteItem, changeNewText, addNewText } from "../../store/actions"
 import { Styled } from './ToDoListModal.styled';
 
 const customStyles = {
@@ -47,6 +47,7 @@ export const ToDoListModal = () => {
   return (
     <div>
       <Modal
+        ariaHideApp={false}
         isOpen={isModalOpen}
         style={customStyles}
       >

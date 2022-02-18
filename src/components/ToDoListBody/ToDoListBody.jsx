@@ -1,6 +1,8 @@
-import { useDispatch, useSelector } from "react-redux"
-import { changeChacked, isOpenModal, modalEdit, modalDel } from "../../../store/actions"
-import { Styled } from "./ToDoListBody.styled"
+import { useDispatch } from "react-redux"
+import { useSelector } from "react-redux"
+import { changeChacked, isOpenModal, modalEdit, modalDel } from "../../store/actions"
+import { Styled } from './ToDoListBody.styled'
+
 
 export const ToDoListBody = () => {
 

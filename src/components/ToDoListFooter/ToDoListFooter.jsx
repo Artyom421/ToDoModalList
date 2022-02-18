@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux"
 import { useSelector } from "react-redux"
-import { clearCompleted } from "../../../store/actions"
+import { clearCompleted } from "../../store/actions"
 import { Styled } from "./ToDoListFooter.styled"
 
 export const ToDoListFooter = () => {
@@ -16,19 +16,14 @@ export const ToDoListFooter = () => {
         dispatch(clearCompleted(noCompleted))
     }
 
-    const TTT = () => {
-        return(
-            <Styled.Div>
-                <Styled.Span>{completed.length}/{list.length} completed</Styled.Span>
-                <Styled.Button onClick={() => clear()}>Clear Completed</Styled.Button>
-            </Styled.Div>
-        )
-    }
-
     return (
         <>
             {
-              list.length === 0 ? <Styled.Span>ToDo-List is empty</Styled.Span> : <TTT/>
+              list.length === 0 ? <Styled.Span>ToDo-List is empty</Styled.Span> :
+              <Styled.Div>
+              <Styled.Span>{completed.length}/{list.length} completed</Styled.Span>
+              <Styled.Button onClick={() => clear()}>Clear Completed</Styled.Button>
+          </Styled.Div>
             }
             
         </>

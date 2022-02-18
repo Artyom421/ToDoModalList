@@ -20,11 +20,13 @@ const toDoState = {
     newModalText: ""
 }
 
-export const Reducer = ( state = toDoState, action ) => {
 
+
+export const Reducer = ( state = toDoState, action ) => {
+    
 
     switch( action.type ){
-        case CHANGE_TEXT: 
+        case CHANGE_TEXT:
             return{ ...state, text: action.payload };
         case ADD_TEXT:
             return{ ...state, list: action.payload, text: ""}

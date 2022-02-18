@@ -1,8 +1,8 @@
 import { useHistory } from "react-router"
-import { ToDoListHeader } from "./ToDoListHeader"
-import { ToDoListBody } from "./ToDoListBody"
-import { ToDoListFooter } from "./ToDoListFooter"
-import { ToDoListModal } from "./ToDoListModal"
+import { ToDoListHeader } from "../../components/ToDoListHeader"
+import { ToDoListFooter } from "../../components/ToDoListFooter"
+import { ToDoListModal } from "../../components/ToDoListModal"
+import { ToDoListBody } from "../../components/ToDoListBody"
 import { Styled } from "./ToDoListPage.styled"
 
 

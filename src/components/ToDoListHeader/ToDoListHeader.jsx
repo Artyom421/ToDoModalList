@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux"
 import { useSelector } from "react-redux"
-import { changeText, addText } from "../../../store/actions"
+import { changeText, addText } from "../../store/actions"
 import { Styled } from "./ToDoListHeader.styled"
 
 export const ToDoListHeader = () => {
