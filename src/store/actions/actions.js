@@ -9,6 +9,9 @@ export const MODAL_DEL = "MODAL_DEL"
 export const CLOSE_MODAL = "CLOSE_MODAL"
 export const CHANGE_NEW_TEXT = "CHANGE_NEW_TEXT"
 export const ADD_NEW_TEXT = "ADD_NEW_TEXT"
+export const CLICK_1 = "CLICK_1"
+export const CLICK_2 = "CLICK_2"
+export const ALL_PERSONS = "ALL_PERSONS"
 
 export const changeText = ( payload ) => {
     return { type: CHANGE_TEXT, payload }
@@ -52,4 +55,16 @@ export const changeNewText = ( payload ) => {
 
 export const addNewText = ( payload ) => {
     return { type: ADD_NEW_TEXT, payload}
+}
+
+export const click_1 = ( payload ) => {
+    return { type: CLICK_1, payload}
+}
+
+export const click_2 = ( payload ) => {
+    return { type: CLICK_2, payload}
+}
+
+export const allPersons = ( payload ) => {
+    return { type: ALL_PERSONS, payload}
 }

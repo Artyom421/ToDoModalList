@@ -37,8 +37,15 @@ export const ToDoListBody = () => {
     }
 
     const changeStyle = (id) => {
-        const item = document.getElementById(id)
-        item.classList.toggle('changeStyle')
+        const listItem = list.filter((item) => item.id === id)[0]
+        if(listItem.isCompleted === true){
+            listItem.class = 'changeStyle'
+            dispatch(changeChacked(list))
+        }
+        else if(listItem.isCompleted === false ){
+            listItem.class = ''
+            dispatch(changeChacked(list))
+        }
     }
 
     return (
@@ -46,11 +53,11 @@ export const ToDoListBody = () => {
             {
                 list.map(( item , index )=> (
                     <Styled.RootDiv key={item.id}>
-                        <Styled.Label id={item.id} >
+                        <Styled.Label id={item.id}  className={item.class}>
                             <Styled.Span>{index + 1}</Styled.Span>
                             <Styled.Input type="checkbox" onClick={(e) => {changeInputChecked(e.target.checked, index) 
                                                                             changeStyle(item.id)}}/>
-                            <Styled.Ptag>{item.text}</Styled.Ptag>
+                            <Styled.Ptag >{item.text}</Styled.Ptag>
                         </Styled.Label>
                         <Styled.Div>
                             <Styled.ButtonDel className="butDel" onClick={() => openModalDel(item.text, index) }>del</Styled.ButtonDel>

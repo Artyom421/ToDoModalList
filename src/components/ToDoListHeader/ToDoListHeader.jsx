@@ -20,9 +20,8 @@ Pleace enter the text `
 
         if(text === ''){
             alert(alertText)
-            return { ...state};
         }else{
-            list.push( { text, isCompleted: false, id: Math.random(),  } )
+            list.push( { text, isCompleted: false, id: Math.random(), class:''  } )
         dispatch(addText(list))
         }
     }

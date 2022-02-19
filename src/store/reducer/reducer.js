@@ -8,21 +8,28 @@ import {ADD_TEXT,
         MODAL_DEL,
         CLOSE_MODAL, 
         CHANGE_NEW_TEXT,
-        ADD_NEW_TEXT} from "../actions";
+        ADD_NEW_TEXT,
+        CLICK_1,
+        CLICK_2,
+        ALL_PERSONS} from "../actions";
   
-const toDoState = {
+const initialState = {
     list: [],
     text: "",
     isModalOpen: false ,
     modalText: "",
     modalContent: {},
     newText: "",
-    newModalText: ""
+    newModalText: "",
+    click: '',
 }
 
 
 
-export const Reducer = ( state = toDoState, action ) => {
+export const Reducer = ( state = initialState, action ) => {
+
+    const stateClone = JSON.parse(JSON.stringify(state))
+    const { click } = stateClone
     
 
     switch( action.type ){
@@ -47,7 +54,11 @@ export const Reducer = ( state = toDoState, action ) => {
         case CHANGE_NEW_TEXT:
             return { ...state, newModalText: action.payload}
         case ADD_NEW_TEXT:
-            return { ...state, list: action.payload}    
+            return { ...state, list: action.payload}
+        case CLICK_1:
+            return { ...stateClone, click: action.payload }
+        case CLICK_2:
+            return { ...stateClone, click: action.payload }
         default: 
             return state;
     } 
