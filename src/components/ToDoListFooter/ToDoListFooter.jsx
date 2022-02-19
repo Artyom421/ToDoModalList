@@ -16,13 +16,15 @@ export const ToDoListFooter = () => {
         dispatch(clearCompleted(noCompleted))
     }
 
+
+
     return (
         <>
             {
               list.length === 0 ? <Styled.Span>ToDo-List is empty</Styled.Span> :
               <Styled.Div>
               <Styled.Span>{completed.length}/{list.length} completed</Styled.Span>
-              <Styled.Button onClick={() => clear()}>Clear Completed</Styled.Button>
+              <Styled.Button className="butComl" onClick={() => clear()}>Clear Completed</Styled.Button>
           </Styled.Div>
             }
             

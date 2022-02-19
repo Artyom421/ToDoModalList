@@ -42,7 +42,7 @@ const Button = styled.button`
     height: 100%;
     cursor: pointer;
     box-shadow: 1px 2px 2px grey;
-    transition: 1s;
+    transition: 0.5s;
 `
 
 export const Styled = { Root, Form, Input, Button }

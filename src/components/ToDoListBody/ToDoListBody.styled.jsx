@@ -10,6 +10,12 @@ const Root = styled.div`
     overflow-x: hidden;
 `
 
+const RootDiv = styled.div `
+    width: 100%;
+    display: flex;
+    max-height: 200px;
+`
+
 const Label = styled.label`
     width: 100%;
     height: 40px;
@@ -43,7 +49,7 @@ const Input = styled.input`
 `
 
 const Ptag = styled.p`
-    width: 61%;
+    width: 85%;
     font-size: 22px;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 700;
@@ -72,6 +78,7 @@ const button = `
     height: 30px;
     cursor: pointer;
     box-shadow: 1px 2px 2px grey;
+    transition: 0.5s;
 `
 
 const ButtonEdit = styled.button`
@@ -85,4 +92,4 @@ const ButtonDel = styled.button`
 `
 
 
-export const Styled = { Root, Label, Span, Input, Ptag, Div, ButtonDel, ButtonEdit }
+export const Styled = { Root, Label, Span, Input, Ptag, Div, ButtonDel, ButtonEdit, RootDiv }

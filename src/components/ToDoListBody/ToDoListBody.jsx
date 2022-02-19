@@ -41,23 +41,22 @@ export const ToDoListBody = () => {
         item.classList.toggle('changeStyle')
     }
 
-    
-
     return (
         <Styled.Root>
             {
                 list.map(( item , index )=> (
-                    
-                    <Styled.Label id={item.id} key={item.id}>
-                        <Styled.Span>{index + 1}</Styled.Span>
-                        <Styled.Input type="checkbox" onClick={(e) => {changeInputChecked(e.target.checked, index) 
-                                                                        changeStyle(item.id)}}/>
-                        <Styled.Ptag>{item.text}</Styled.Ptag>
+                    <Styled.RootDiv key={item.id}>
+                        <Styled.Label id={item.id} >
+                            <Styled.Span>{index + 1}</Styled.Span>
+                            <Styled.Input type="checkbox" onClick={(e) => {changeInputChecked(e.target.checked, index) 
+                                                                            changeStyle(item.id)}}/>
+                            <Styled.Ptag>{item.text}</Styled.Ptag>
+                        </Styled.Label>
                         <Styled.Div>
-                            <Styled.ButtonDel onClick={() => openModalDel(item.text, index) }>del</Styled.ButtonDel>
-                            <Styled.ButtonEdit onClick={() => openModalEdit(item.text, index) }>edit</Styled.ButtonEdit>
+                            <Styled.ButtonDel className="butDel" onClick={() => openModalDel(item.text, index) }>del</Styled.ButtonDel>
+                            <Styled.ButtonEdit className="butEd" onClick={() => openModalEdit(item.text, index) }>edit</Styled.ButtonEdit>
                         </Styled.Div>
-                    </Styled.Label>
+                    </Styled.RootDiv>
                 ))
             }
         </Styled.Root>

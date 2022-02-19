@@ -25,6 +25,7 @@ const Button = styled.button`
     color: #282828;
     cursor: pointer;
     box-shadow: 1px 2px 2px grey;
+    transition: 0.5s;
 `
 
 export const Styled = { Div, Span, Button }
