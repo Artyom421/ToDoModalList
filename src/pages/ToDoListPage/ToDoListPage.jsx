@@ -16,8 +16,8 @@ export const ToDoListPage = () => {
     return (
         <Styled.Root>
             <Styled.Div>
+                <Styled.Ptag onClick={() => goToHomePage('/')} style={{cursor:"pointer"}}>Back To HomePage</Styled.Ptag>
                 <Styled.Ptag>This is ToDoListPage</Styled.Ptag>
-                <Styled.Ptag onClick={() => goToHomePage('/')} style={{cursor:"pointer"}}>GO TO HomePage</Styled.Ptag>
             </Styled.Div>
                 <Styled.ToDo>
                     <ToDoListHeader/>
