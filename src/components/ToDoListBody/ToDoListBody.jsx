@@ -3,7 +3,6 @@ import { useSelector } from "react-redux"
 import { changeChacked, isOpenModal, modalEdit, modalDel } from "../../store/actions"
 import { Styled } from './ToDoListBody.styled'
 
-
 export const ToDoListBody = () => {
 
     const dispatch = useDispatch()
@@ -19,7 +18,7 @@ export const ToDoListBody = () => {
     const openModalEdit = ( text, index ) => {
         const modalEditContent = {
             button: "EDIT",
-            text: "edit",
+            text: "edit this item",
             index
         }
         dispatch(isOpenModal( text ))
@@ -29,7 +28,7 @@ export const ToDoListBody = () => {
     const openModalDel = ( text, index ) => {
         const modalDelContent = {
             button: "YES",
-            text: "delete", 
+            text: "delete this item", 
             index
         }
         dispatch(isOpenModal(text))

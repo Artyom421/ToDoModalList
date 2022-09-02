@@ -22,7 +22,7 @@ Pleace enter the text `
             alert(alertText)
         }else{
             list.push( { text, isCompleted: false, id: Math.random(), class:''  } )
-        dispatch(addText(list))
+            dispatch(addText(list))
         }
     }
 

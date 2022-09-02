@@ -1,11 +1,8 @@
 import axios from "axios"
 import { useState } from "react"
 import { useEffect } from "react"
-import { useHistory } from "react-router"
 
 export const ImagesList = () => {
-
-    const history = useHistory()
 
     const [state,setState] = useState([])
 
@@ -20,7 +17,6 @@ export const ImagesList = () => {
 
     return (
         <div>
-            <h2 onClick={() => history.push('/')} style={{cursor:"pointer"}}>Back To HomePage</h2>
             <h1>This Is ImagesList</h1>
             <div className="imagesDiv">
                 {

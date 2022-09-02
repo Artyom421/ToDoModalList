@@ -20,7 +20,7 @@ const initialState = {
     modalText: "",
     modalContent: {},
     newText: "",
-    newModalText: "",
+    newModalText: '',
     click: '',
 }
 
@@ -34,7 +34,7 @@ export const Reducer = ( state = initialState, action ) => {
 
     switch( action.type ){
         case CHANGE_TEXT:
-            return{ ...state, text: action.payload };
+            return{ ...state, text: action.payload }
         case ADD_TEXT:
             return{ ...state, list: action.payload, text: ""}
         case CHANGE_CHECKED:
@@ -52,7 +52,7 @@ export const Reducer = ( state = initialState, action ) => {
         case CLOSE_MODAL:
             return { ...state, isModalOpen: false}
         case CHANGE_NEW_TEXT:
-            return { ...state, newModalText: action.payload}
+            return { ...state, modalText: action.payload}
         case ADD_NEW_TEXT:
             return { ...state, list: action.payload}
         case CLICK_1:

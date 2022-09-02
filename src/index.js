@@ -10,7 +10,7 @@ ReactDOM.render(
   <Provider store={Store}>
     <Router>
       <Switch>
-        <App />
+        <App/>
       </Switch>
     </Router>
   </Provider>
